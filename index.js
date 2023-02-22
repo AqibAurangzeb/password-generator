@@ -87,12 +87,16 @@ function generateRandomPassword() {
 }
 
 function copyFirstButtonToClipboard() {
+  if (password1 === "") return;
+
   navigator.clipboard.writeText(password1).then(() => {
     copiedEl.textContent = "copied!";
   }); 
 }
 
 function copySecondButtonToClipboard() {
+  if (password2 === "") return;
+
   navigator.clipboard.writeText(password2).then(() => {
     copiedEl.textContent = "copied!";
   }); 
