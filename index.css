@@ -1,0 +1,78 @@
+@font-face {
+  src: url("fonts/Karla-VariableFont_wght.ttf");
+  font-family: Karla;
+}
+
+@font-face {
+  src: url("fonts/Inter-VariableFont_slnt,wght.ttf");
+  font-family: Inter;
+}
+
+body {
+  margin: 0;
+  background: #1C1C1C;
+  color: #FFFFFF;
+}
+
+#container {
+  background: #1F2937;
+  width: 550px;
+  height: 550px;
+  margin: 100px auto 0 auto;
+  overflow: auto;
+}
+
+#main {
+  margin: 115px 52px 10px 55px;
+}
+
+#title {
+  font-family: Karla;
+  font-weight: 800;
+  margin-bottom: 10px;
+}
+
+#title-green {
+  color: #4ADF86;
+}
+
+#subtitle {
+  font-family: Inter;
+  font-weight: 400;
+  margin-top: 0px;
+  color: #D5D4D8;
+  margin-bottom: 50px;
+}
+
+#generate-password-btn {
+  font-family: Inter;
+  font-weight: 500;
+  padding: 9px 15px;
+  border: none;
+  border-radius: 4px;
+  color: inherit;
+  background: #10B981;
+  margin-bottom: 35px;
+}
+
+hr {
+  border: 1px solid #2F3E53;
+  margin-bottom: 35px;
+}
+
+#generated-passwords {
+  display: flex;
+  justify-content: space-between;
+}
+
+button {
+  width: 211px;
+  height: 39px;
+  background: #273549;
+  border: none;
+  border-radius: 6px;
+  color: #55F991;
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 15px;
+}
