@@ -13,11 +13,11 @@
         <div id="main">
           <h1 id="title">Generate a<br><span id="title-green">random password</span></h1>
           <h3 id="subtitle">Never use an insecure password again.</h3>
-          <button id="generate-password-btn">Generate passwords</button>
+          <button id="generate-password-btn" onclick="generatePasswords()">Generate passwords</button>
           <hr>
           <div id="generated-passwords">
-            <button class="generated-password-btn">>nfJjy!dDvR&ial</button>
-            <button class="generated-password-btn">eg&lt;xWij@veiPUwK</button>
+            <button class="generated-password-btn" id="generated-password-btn-1" onclick="copyFirstButtonToClipboard()"></button>
+            <button class="generated-password-btn" id="generated-password-btn-2" onclick="copySecondButtonToClipboard()"></button>
           </div>
         </div>
       </div>

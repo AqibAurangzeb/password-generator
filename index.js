@@ -8,8 +8,12 @@ const subtitleEl = document.getElementById("subtitle");
 const hrEl = document.querySelector("hr");
 const lightDarkModeBtnEl = document.getElementById("light-dark-mode-btn");
 
+const generatedPasswordBtn1 = document.getElementById("generated-password-btn-1");
+const generatedPasswordBtn2 = document.getElementById("generated-password-btn-2");
+
+const passwordLength = 15;
+
 function changeDarkLightMode() {
-  console.log("hit button");
   if (lightDarkModeBtnEl.textContent === "🌙") {
     lightDarkModeBtnEl.textContent = "☀️";
     lightDarkModeBtnEl.style.background = "#ECFDF5";
@@ -30,4 +34,36 @@ function changeDarkLightMode() {
     subtitleEl.style.color = "#D5D4D8";
     hrEl.style.border = "1px solid #2F3E53"
   }
+}
+
+function generatePasswords() {
+  generatedPasswordBtn1.textContent = generateRandomPassword()
+  generatedPasswordBtn2.textContent = generateRandomPassword()
+}
+
+function generateRandomPassword() {
+  let password = "";
+
+  for(let i = 0; i < passwordLength; i++) {
+    let randomIndex = Math.floor(Math.random() * characters.length);
+    password += characters[randomIndex];
+  }
+
+  return password;
+}
+
+function copyFirstButtonToClipboard() {
+  let buttonEl = document.getElementById("generated-password-btn-1");
+
+  navigator.clipboard.writeText(buttonEl.textContent).then(() => {
+    alert("Copied to clipboard");
+  }); 
+}
+
+function copySecondButtonToClipboard() {
+  let buttonEl = document.getElementById("generated-password-btn-2");
+
+  navigator.clipboard.writeText(buttonEl.textContent).then(() => {
+    alert("Copied to clipboard");
+  }); 
 }
