@@ -13,6 +13,17 @@
         <div id="main">
           <h1 id="title">Generate a<br><span id="title-green">random password</span></h1>
           <h3 id="subtitle">Never use an insecure password again.</h3>
+          <form>
+            <label>Password Length</label>
+            <input id="password-length" type="range" value="15" min="1" max="99" oninput="this.nextElementSibling.value = this.value">
+            <output>15</output>
+            <br>
+            <input id="symbols" type="checkbox">
+            <label>Symbols</label>
+            <br>
+            <input id="numbers" type="checkbox">
+            <label>Numbers</label>            
+          </form>
           <button id="generate-password-btn" onclick="generatePasswords()">Generate passwords</button>
           <hr>
           <div id="generated-passwords">
