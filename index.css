@@ -8,16 +8,24 @@
   font-family: Inter;
 }
 
+:root {
+  --main-bg-color: #1F2937;
+  --main-title-color: #FFFFFF;
+  --secondary-title-color: #4ADF86;
+  --text-color: #D5D4D8;
+  --hr-color: #2F3E53
+}
+
 body {
   margin: 0;
   background: #1C1C1C;
-  color: #FFFFFF;
+  color: var(--text-color);
   font-family: Inter;
   font-weight: 400;
 }
 
 #container {
-  background: #1F2937;
+  background: var(--main-bg-color);
   width: 550px;
   height: 550px;
   margin: 0px auto 0 auto;
@@ -25,24 +33,24 @@ body {
 }
 
 #main {
-  margin: 115px 52px 10px 55px;
+  margin: 70px 52px 10px 55px;
 }
 
 #title {
   font-family: Karla;
   font-weight: 800;
   margin-bottom: 10px;
+  color: var(--main-title-color);
 }
 
 #title-green {
-  color: #4ADF86;
+  color: var(--secondary-title-color);
 }
 
 #subtitle {
   font-family: Inter;
   font-weight: 400;
   margin-top: 0px;
-  color: #D5D4D8;
   margin-bottom: 50px;
 }
 
@@ -58,7 +66,7 @@ body {
 }
 
 hr {
-  border: 1px solid #2F3E53;
+  border: 1px solid var(--hr-color);
   margin-bottom: 35px;
 }
 
@@ -87,7 +95,7 @@ hr {
 }
 
 #light-dark-mode-btn {
-  background: #1F2937;
+  background: var(--main-bg-color);
   padding: 10px;
   border: none;
   border-radius: 50%;
@@ -100,4 +108,12 @@ hr {
 
 #password-length-input {
   width: 40px;
+}
+
+#copied {
+  font-family: Inter;
+  font-weight: 400;
+  font-size: 14px;
+  font-style: italic;
+  color: var(--text-color);
 }

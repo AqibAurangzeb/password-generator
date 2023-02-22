@@ -4,9 +4,11 @@ const symbols = ["~","`","!","@","#","$","%","^","&","*","(",")","_","-","+","="
 
 const bodyEl = document.querySelector("body");
 const containerEl = document.getElementById("container");
+const titleEl = document.getElementById("title");
 const titleGreenEl = document.getElementById("title-green");
 const subtitleEl = document.getElementById("subtitle");
 const hrEl = document.querySelector("hr");
+const copiedEl = document.getElementById("copied");
 const lightDarkModeBtnEl = document.getElementById("light-dark-mode-btn");
 
 const generatedPasswordBtn1 = document.getElementById("generated-password-btn-1");
@@ -18,23 +20,21 @@ let password2 = "";
 function changeDarkLightMode() {
   if (lightDarkModeBtnEl.textContent === "🌙") {
     lightDarkModeBtnEl.textContent = "☀️";
-    lightDarkModeBtnEl.style.background = "#ECFDF5";
-    
-    bodyEl.style.color = "#2B283A";
-    containerEl.style.background = "#ECFDF5";
-    titleGreenEl.style.color = "#10B981";
-    subtitleEl.style.color = "#6B7280";
-    hrEl.style.border = "1px solid #D5D4D8"
+
+    document.documentElement.style.setProperty('--main-bg-color', '#ECFDF5');
+    document.documentElement.style.setProperty('--main-title-color', '#2B283A');
+    document.documentElement.style.setProperty('--secondary-title-color', '#10B981');
+    document.documentElement.style.setProperty('--text-color', '#6B7280');
+    document.documentElement.style.setProperty('--hr-color', '#D5D4D8');
   }
   else {
     lightDarkModeBtnEl.textContent = "🌙"; 
-    lightDarkModeBtnEl.style.background = "#1F2937";
 
-    bodyEl.style.color = "#FFFFFF";
-    containerEl.style.background = "#1F2937";
-    titleGreenEl.style.color = "#4ADF86";
-    subtitleEl.style.color = "#D5D4D8";
-    hrEl.style.border = "1px solid #2F3E53"
+    document.documentElement.style.setProperty('--main-bg-color', '#1F2937');
+    document.documentElement.style.setProperty('--main-title-color', '#FFFFFF');
+    document.documentElement.style.setProperty('--secondary-title-color', '#4ADF86');
+    document.documentElement.style.setProperty('--text-color', '#D5D4D8');
+    document.documentElement.style.setProperty('--hr-color', '#2F3E53');
   }
 }
 
@@ -60,6 +60,7 @@ function generatePasswords() {
 
 function generateRandomPassword() {
   let password = "";
+  copiedEl.textContent = "";
 
   let passwordLength = document.getElementById("password-length").value;
   let includeNumbers = document.getElementById("numbers").checked;
@@ -86,20 +87,14 @@ function generateRandomPassword() {
 }
 
 function copyFirstButtonToClipboard() {
-  let buttonEl = document.getElementById("generated-password-btn-1");
-
-  console.log(password1);
-
   navigator.clipboard.writeText(password1).then(() => {
-    alert("Copied to clipboard");
+    copiedEl.textContent = "copied!";
   }); 
 }
 
 function copySecondButtonToClipboard() {
-  let buttonEl = document.getElementById("generated-password-btn-2");
-
   navigator.clipboard.writeText(password2).then(() => {
-    alert("Copied to clipboard");
+    copiedEl.textContent = "copied!";
   }); 
 }
 
