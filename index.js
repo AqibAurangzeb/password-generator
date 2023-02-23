@@ -26,6 +26,7 @@ function changeDarkLightMode() {
     document.documentElement.style.setProperty('--secondary-title-color', '#10B981');
     document.documentElement.style.setProperty('--text-color', '#6B7280');
     document.documentElement.style.setProperty('--hr-color', '#D5D4D8');
+    document.documentElement.style.setProperty('--switch-mode-color', '#1F2937');    
   }
   else {
     lightDarkModeBtnEl.textContent = "🌙"; 
@@ -35,6 +36,7 @@ function changeDarkLightMode() {
     document.documentElement.style.setProperty('--secondary-title-color', '#4ADF86');
     document.documentElement.style.setProperty('--text-color', '#D5D4D8');
     document.documentElement.style.setProperty('--hr-color', '#2F3E53');
+    document.documentElement.style.setProperty('--switch-mode-color', '#ECFDF5');  
   }
 }
 

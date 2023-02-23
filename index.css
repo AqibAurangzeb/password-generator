@@ -13,7 +13,8 @@
   --main-title-color: #FFFFFF;
   --secondary-title-color: #4ADF86;
   --text-color: #D5D4D8;
-  --hr-color: #2F3E53
+  --hr-color: #2F3E53;
+  --switch-mode-color: #ECFDF5;
 }
 
 body {
@@ -28,12 +29,12 @@ body {
   background: var(--main-bg-color);
   width: 550px;
   height: 550px;
-  margin: 0px auto 0 auto;
+  margin: 100px auto 0 auto;
   overflow: auto;
 }
 
 #main {
-  margin: 70px 52px 10px 55px;
+  margin: -48px 52px 10px 55px;
 }
 
 #title {
@@ -65,6 +66,11 @@ body {
   margin-bottom: 35px;
 }
 
+#generate-password-btn:hover {
+  transition: 0.5s;
+  background-color: #047857;  
+}
+
 hr {
   border: 1px solid var(--hr-color);
   margin-bottom: 35px;
@@ -88,18 +94,23 @@ hr {
 }
 
 #light-dark-mode-container {
-  display: block;
-  width: 50px;
-  height: 50px;
-  margin: 50px auto 0px auto;
+  display: flex;
+  justify-content: end;
+  align-items: end;
 }
 
 #light-dark-mode-btn {
   background: var(--main-bg-color);
   padding: 10px;
   border: none;
+  font-size: 20px;
   border-radius: 50%;
-  margin: 0 auto;
+  margin: 50px 50px 0px 0px;
+}
+
+#light-dark-mode-btn:hover {
+  transition: 0.5s;
+  background-color: var(--switch-mode-color);
 }
 
 #form {
